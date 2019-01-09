@@ -23,13 +23,18 @@ class DemoViewController: UIViewController {
     }
     
     func callImagePicker() {
-        let imageObj = UIImage(named: "Edu")
-        let circleCropController = UMImageCropper(withImage: imageObj!, withCropperFrame: CGRect(x: 0, y: 0, width: 325, height: 100), withCircularOverlay: true, andProvideCircularImage: false)
-        circleCropController.viewBackgroundColor = .green
-        circleCropController.overlayColor = UIColor.brown.withAlphaComponent(0.3)
-        circleCropController.scrollViewColor = .purple
-        circleCropController.borderColor = .white
-        circleCropController.borderSize = 8.0
+        
+        // to get circular image please provide same width and heiht in cropper frame.
+        // to get square image with circular overlay set withCircularOverlay = true
+        // to get circular image set both withCircularOverlay = true and andProvideCircularImage = true. if you only set andProvideCircularImage = true, it will not return circular image.
+        
+        let imageObj = UIImage(named: "SonGoku")
+        let circleCropController = UMImageCropper(withImage: imageObj!, withCropperFrame: CGRect(x: 0, y: 0, width: 300, height: 300), withCircularOverlay: true, andProvideCircularImage: true)
+        circleCropController.viewBackgroundColor = .white
+        circleCropController.overlayColor = UIColor.black.withAlphaComponent(0.7)
+        circleCropController.scrollViewColor = .lightGray
+        circleCropController.borderColor = .darkGray
+        circleCropController.borderSize = 2.0
         
         circleCropController.viewDismissCompletion = { imageObj in
             
