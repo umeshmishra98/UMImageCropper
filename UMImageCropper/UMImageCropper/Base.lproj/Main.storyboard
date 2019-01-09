@@ -1,24 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fcH-hz-UH6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Demo View Controller-->
+        <scene sceneID="CH1-ih-CBS">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="fcH-hz-UH6" customClass="DemoViewController" customModule="MKImageCropper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hm6-Rd-1Zk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="prk-8l-0Dg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
+                                <color key="backgroundColor" red="1" green="0.79840039699999998" blue="0.63382115539999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jo-CT-7aZ">
+                                <rect key="frame" x="16" y="587" width="343" height="40"/>
+                                <color key="backgroundColor" red="0.1769086104" green="0.37350120850000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="KIU-oi-3NS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="17"/>
+                                <state key="normal" title="Crop Image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cropImageButtonTapped:" destination="fcH-hz-UH6" eventType="touchUpInside" id="VRO-UJ-F8k"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="prk-8l-0Dg" secondAttribute="trailing" id="3hv-dI-hoc"/>
+                            <constraint firstItem="prk-8l-0Dg" firstAttribute="top" secondItem="hm6-Rd-1Zk" secondAttribute="top" id="N7U-lD-SuC"/>
+                            <constraint firstItem="prk-8l-0Dg" firstAttribute="height" secondItem="hm6-Rd-1Zk" secondAttribute="height" multiplier="557:667" id="OSO-26-Bzs"/>
+                            <constraint firstItem="8Yj-oe-bMm" firstAttribute="bottom" secondItem="0jo-CT-7aZ" secondAttribute="bottom" constant="40" id="WBV-a3-rv5"/>
+                            <constraint firstItem="8Yj-oe-bMm" firstAttribute="trailing" secondItem="0jo-CT-7aZ" secondAttribute="trailing" constant="16" id="eMy-Rh-GLn"/>
+                            <constraint firstItem="0jo-CT-7aZ" firstAttribute="leading" secondItem="8Yj-oe-bMm" secondAttribute="leading" constant="16" id="fVN-OH-TpO"/>
+                            <constraint firstItem="prk-8l-0Dg" firstAttribute="leading" secondItem="hm6-Rd-1Zk" secondAttribute="leading" id="hCo-Br-oBA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Yj-oe-bMm"/>
                     </view>
+                    <connections>
+                        <outlet property="myImageView" destination="prk-8l-0Dg" id="FIU-Dx-tCW"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aCg-fB-Tie" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-266.39999999999998" y="-67.016491754122939"/>
         </scene>
     </scenes>
 </document>
